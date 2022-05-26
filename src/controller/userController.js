@@ -12,7 +12,7 @@ class userController {
     });
   };
 
-  // Método para implementação da fórmula
+  // IMC Formula
 
   static getImc = (req, res) => {
     const usuario = {
@@ -22,15 +22,35 @@ class userController {
       age: req.body.age,
     };
 
-    function formula() {
-      const { weigth } = usuario;
-      const { heigth } = usuario;
+    const { weigth } = usuario;
+    const { heigth } = usuario; // Meters 176 = 1.76
 
-      const imc = weigth / heigth ** 2;
-      return imc;
-    }
+    const imc = weigth / heigth ** 2;
 
-    res.send(formula);
+    res.json({
+      imc,
+    });
+  };
+
+  // Harris Benedict Formula (Male)
+
+  static harrisBenedictFormula = (req, res) => {
+    const usuario = {
+      name: req.body.name,
+      weigth: req.body.weigth,
+      heigth: req.body.heigth,
+      age: req.body.age,
+    };
+
+    const { weigth } = usuario;
+    const { heigth } = usuario; // Centimeters 1.76 = 176
+    const { age } = usuario;
+
+    const harris = 66 + (13.8 * weigth) + (5 * heigth) - (6.8 * age);
+
+    res.json({
+      harris,
+    });
   };
 }
 
