@@ -1,7 +1,7 @@
 import user from '../models/User.js';
 
 // Método para listar os usuarios.
-class userController {
+class UserController {
   static getUsers = (req, res) => {
     user.find((err, users) => {
       if (err) {
@@ -54,4 +54,4 @@ class userController {
   };
 }
 
-export default userController;
+export default UserController;
