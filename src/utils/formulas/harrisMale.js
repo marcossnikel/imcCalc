@@ -1,4 +1,4 @@
-const harris = (weigth, heigth, age,) => {
+const harris = (weigth, heigth, age) => {
 
   const maleHarris = 66 + (13.8 * weigth) + (5 * heigth) - (6.8 * age);
 
