@@ -1,5 +1,5 @@
 import res from 'express/lib/response';
-import imc from '../../../utils/formulas/imc';
+import imc from '../../../../utils/formulas/imc';
 
 describe('Testing IMC formula', () => {
   it('should calculate imc', () => {

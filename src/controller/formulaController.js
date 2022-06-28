@@ -5,7 +5,7 @@ import imc from '../utils/formulas/imc.js'
 class FormulaController {
 
    static getImc = (req, res) => {
-    const { height, weight } = req.body
+    const { height, weihgt } = req.body
     const result = imc(height,weight)
     try {
       return res.json({result});
